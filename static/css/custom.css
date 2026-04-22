@@ -1,0 +1,86 @@
+/* Project-level style tweaks. Loaded after theme CSS via
+   layouts/partials/head/extensions.html so rules here win. */
+
+/* Give the hero more breathing room now that the navbar is hidden. */
+body.light #hero,
+body:not(.dark) #hero {
+    min-height: auto;
+    padding-top: 4rem !important;
+    padding-bottom: 3rem !important;
+}
+
+/* Display type: slightly tighter line-height so Gloock doesn't feel airy. */
+#hero h1 {
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+#hero h2 {
+    line-height: 1.25;
+    opacity: 0.75;
+    font-size: clamp(1.5rem, 3vw, 2rem) !important;
+}
+
+#hero .hero-content {
+    font-size: 1.1rem;
+}
+
+#hero a.btn {
+    background-color: var(--primary-color) !important;
+    color: #fff !important;
+    border-color: var(--primary-color) !important;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}
+
+#hero a.btn:hover {
+    background-color: var(--primary-color) !important;
+    color: #fff !important;
+    opacity: 0.88;
+}
+
+/* About section: keep it centered and narrow for readability. */
+#about .content {
+    max-width: 48rem;
+    margin: 0 auto;
+    font-size: 1.05rem;
+}
+
+#about h3 {
+    font-family: "Gloock", serif;
+    font-weight: 400;
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+}
+
+/* Endorsements */
+#endorsements h3 {
+    font-family: "Gloock", serif;
+    font-weight: 400;
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    color: var(--text-secondary-color) !important;
+}
+
+#endorsements .endorsement {
+    background-color: var(--secondary-background-color);
+    border-left: 3px solid var(--primary-color);
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+#endorsements .endorsement-quote p {
+    font-family: "Gloock", serif;
+    font-size: clamp(1.1rem, 2vw, 1.35rem);
+    line-height: 1.5;
+    color: var(--text-color);
+    opacity: 0.95;
+    margin: 0;
+}
+
+#endorsements .endorsement-attribution {
+    font-family: "Inter", sans-serif;
+    font-size: 0.95rem;
+    color: var(--text-secondary-color);
+    font-weight: 500;
+    letter-spacing: 0.02em;
+}

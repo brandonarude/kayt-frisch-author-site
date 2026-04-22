@@ -1,0 +1,119 @@
+baseURL = "https://katyfrisch.com/"
+languageCode = "en-us"
+title = "Kayt Frisch, PhD"
+theme = "hugo-profile"
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[outputs]
+  home = ["HTML", "RSS"]
+  page = ["HTML", "RSS"]
+
+[params]
+  description = "Kayt Frisch, PhD — helping families see how God's Creation tells our story."
+  favicon = "/fav.png"
+  useBootstrapCDN = false
+  animate = true
+
+  # Navbar is hidden for now. To restore: open
+  # layouts/partials/sections/header.html at the project root and uncomment
+  # the theme include inside it. Re-enable individual links under
+  # [params.navbar.menus] below.
+
+  [params.theme]
+    disableThemeToggle = true
+    defaultTheme = "light"
+
+  [params.font]
+    fontSize = "1.05rem"
+    fontWeight = 400
+    lineHeight = 1.65
+    textAlign = "left"
+
+  # Minimal palette — one primary accent drives links, buttons, and hero h1.
+  [params.color]
+    textColor = "#2a2a2a"
+    secondaryTextColor = "#6b6b6b"
+    textLinkColor = "#8a5a3b"
+    backgroundColor = "#faf7f2"
+    secondaryBackgroundColor = "#f1ece2"
+    primaryColor = "#8a5a3b"
+    secondaryColor = "#f1ece2"
+    [params.color.darkmode]
+      textColor = "#e4e6eb"
+      secondaryTextColor = "#b0b3b8"
+      textLinkColor = "#c89978"
+      backgroundColor = "#1a1614"
+      secondaryBackgroundColor = "#2a2320"
+      primaryColor = "#c89978"
+      secondaryColor = "#2a2320"
+
+  [params.navbar]
+    align = "ms-auto"
+    brandName = "Kayt Frisch, PhD"
+    disableSearch = true
+    [params.navbar.stickyNavBar]
+      enable = false
+      showOnScrollUp = false
+    [params.navbar.menus]
+      disableAbout = false
+      disableExperience = true
+      disableEducation = true
+      disableProjects = true
+      disableAchievements = true
+      disableContact = true
+
+  [params.hero]
+    enable = true
+    title = "Kayt Frisch, PhD"
+    subtitle = "Helping families see how God's Creation tells our story."
+    # Hero image intentionally omitted. The project's hero override
+    # (layouts/partials/sections/hero/index.html) skips the image column
+    # when this value is empty.
+    [params.hero.button]
+      enable = true
+      name = "Read on Substack"
+      url = "https://godscreationtellsourstory.substack.com/"
+      newPage = true
+      download = false
+
+  # <!-- TODO: complete bio — final sentence ends mid-thought -->
+  [params.about]
+    enable = true
+    title = "About"
+    content = """
+Dr. Kayt Frisch is a professor, parent, and Christ follower who helps learners of all ages understand more about the world God made. She has spent fifteen years in university classrooms, teaching physics and engineering.
+
+As a young adult she spent a lot of time wrestling with how to understand both the Bible and science, and has brought that experience into her classroom, helping students learn about the scientific evidence for topics like modern physics and biological evolution without rejecting their Biblical understanding of God as the Creator.
+
+Now as a parent she is discipling children.<!-- TODO: complete bio -->
+"""
+    [params.about.skills]
+      enable = false
+
+  # Endorsements — rendered by layouts/partials/sections/endorsements.html.
+  # Add more entries under [[params.endorsements.items]] to grow the list.
+  [params.endorsements]
+    enable = true
+    title = "Endorsements"
+    [[params.endorsements.items]]
+      quote = "God's Creation Tells Our Story is the book series I wish I'd had when I was homeschooling my daughters."
+      attribution = "Tamara W."
+
+  [params.experience]
+    enable = false
+  [params.education]
+    enable = false
+  [params.projects]
+    enable = false
+  [params.achievements]
+    enable = false
+  [params.contact]
+    enable = false
+
+  [params.footer]
+    [params.footer.recentPosts]
+      enable = false
+    [params.footer.socialNetworks]
+      # Populate (github/linkedin/twitter/instagram/facebook) to render footer icons.

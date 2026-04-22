@@ -1,0 +1,29 @@
+{{/*
+  Endorsements / testimonials section. Data comes from
+  [params.endorsements] in hugo.toml — add entries under
+  [[params.endorsements.items]] with `quote` and `attribution` keys.
+*/}}
+{{ if .Site.Params.endorsements.enable | default false }}
+{{- $end := .Site.Language.Params.endorsements | default .Site.Params.endorsements -}}
+<section id="endorsements" class="py-5">
+    <div class="container py-3">
+        <h3 class="text-center pb-4">{{ $end.title | default "Endorsements" }}</h3>
+        <div class="row justify-content-center">
+            {{ range $end.items }}
+            <div class="col-sm-12 col-md-10 col-lg-8 mb-4">
+                <figure class="endorsement p-4 p-md-5">
+                    <blockquote class="endorsement-quote mb-3">
+                        <p class="mb-0">&ldquo;{{ .quote | markdownify }}&rdquo;</p>
+                    </blockquote>
+                    {{ with .attribution }}
+                    <figcaption class="endorsement-attribution text-end">
+                        <span>&mdash; {{ . }}</span>
+                    </figcaption>
+                    {{ end }}
+                </figure>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+</section>
+{{ end }}

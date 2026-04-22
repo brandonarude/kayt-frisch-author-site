@@ -1,0 +1,60 @@
+{{/*
+  Navbar is currently HIDDEN for this site.
+
+  To restore: either delete this file (so the theme's header partial
+  takes over) OR change `{{ if false }}` below to `{{ if true }}`.
+
+  Individual nav links are controlled by [params.navbar.menus] in
+  hugo.toml. The full theme header lives at
+  themes/hugo-profile/layouts/partials/sections/header.html.
+*/}}
+
+{{ if false }}
+<script>
+    let localStorageValue = localStorage.getItem("pref-theme");
+    let mediaQuery = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    switch (localStorageValue) {
+        case "dark":
+            document.documentElement.classList.add('dark');
+            document.body.classList.add('dark');
+            break;
+        case "light":
+            document.body.classList.remove('dark');
+            document.documentElement.classList.remove('dark');
+            break;
+        default:
+            if (mediaQuery) {
+                document.documentElement.classList.add('dark');
+                document.body.classList.add('dark');
+            }
+            break;
+    }
+</script>
+
+<header id="profileHeader">
+    <nav class="pt-3 navbar navbar-expand-lg {{ if .Site.Params.animate }}animate{{ end }}">
+        <div class="container-fluid mx-xs-2 mx-sm-5 mx-md-5 mx-lg-5">
+            <a class="navbar-brand primary-font text-wrap" href="{{ .Site.Home.RelPermalink }}">
+                {{ .Site.Params.navbar.brandName | default .Site.Params.title }}
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                <svg aria-hidden="true" height="24" viewBox="0 0 16 16" version="1.1" width="24">
+                    <path fill-rule="evenodd" d="M1 2.75A.75.75 0 011.75 2h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 2.75zm0 5A.75.75 0 011.75 7h12.5a.75.75 0 110 1.5H1.75A.75.75 0 011 7.75zM1.75 12a.75.75 0 100 1.5h12.5a.75.75 0 100-1.5H1.75z"></path>
+                </svg>
+            </button>
+            <div class="collapse navbar-collapse text-wrap primary-font" id="navbarContent">
+                <ul class="navbar-nav {{ .Site.Params.navbar.align | default "ms-auto" }} text-center">
+                    {{ if and (.Site.Params.about.enable | default false) (not (.Site.Params.navbar.menus.disableAbout | default false)) }}
+                    <li class="nav-item navbar-text">
+                        <a class="nav-link" href="{{ .Site.Home.RelPermalink }}#about" aria-label="about">
+                            {{ .Site.Params.about.title | default (i18n "nav_about") }}
+                        </a>
+                    </li>
+                    {{ end }}
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+{{ end }}

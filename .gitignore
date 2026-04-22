@@ -1,0 +1,15 @@
+# Hugo build output
+/public/
+/resources/
+.hugo_build.lock
+
+# Hugo deploy state
+.hugo_build/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/

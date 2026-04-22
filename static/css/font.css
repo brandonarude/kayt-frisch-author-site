@@ -1,0 +1,40 @@
+/* Project override of theme font.css — applies Gloock + Inter everywhere. */
+
+body {
+    font-family: "Inter", system-ui, -apple-system, Segoe UI, sans-serif !important;
+}
+
+/* Theme uses `.secondary-font` / `#secondary-font` for body-adjacent text. */
+.secondary-font, #secondary-font {
+    font-family: "Inter", system-ui, -apple-system, Segoe UI, sans-serif;
+}
+
+/* Theme uses `.primary-font` / `#primary-font` for headings / nav brand /
+   hero block. Point it at the display face. */
+.primary-font, #primary-font {
+    font-family: "Gloock", Georgia, "Times New Roman", serif;
+}
+
+.default-font, #default-font {
+    font-family: "Inter", system-ui, -apple-system, Segoe UI, sans-serif;
+}
+
+/* Display face for all headings site-wide. Hero h1/h2 live inside
+   #primary-font already, but this catches headings elsewhere. */
+h1, h2, h3, h4,
+.h1, .h2, .h3, .h4 {
+    font-family: "Gloock", Georgia, "Times New Roman", serif;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+}
+
+/* Hero titles explicitly — theme sets them inside #primary-font but force
+   the display face in case a child element reverts. */
+#hero h1, #hero h2 {
+    font-family: "Gloock", Georgia, "Times New Roman", serif;
+}
+
+/* Paragraphs, lists, nav (when restored) use the body face. */
+p, li, a, .nav-link, .navbar-brand {
+    font-family: "Inter", system-ui, -apple-system, Segoe UI, sans-serif;
+}
