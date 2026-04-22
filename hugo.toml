@@ -12,7 +12,7 @@ theme = "hugo-profile"
 
 [params]
   description = "Kayt Frisch, PhD — helping families see how God's Creation tells our story."
-  favicon = "/fav.png"
+  favicon = "images/kayt-frisch-favicon-transparent-200x200.png"
   useBootstrapCDN = false
   animate = true
 
