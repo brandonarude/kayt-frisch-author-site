@@ -9,16 +9,27 @@ body:not(.dark) #hero {
     padding-bottom: 3rem !important;
 }
 
+.hero-dark {
+    --background-color: var(--background-color-dark);
+    --secondary-background-color: var(--secondary-background-color-dark);
+    --text-color: var(--text-color-dark);
+    --text-secondary-color: var(--text-secondary-color-dark);
+    --text-link-color: var(--text-link-color-dark);
+    --primary-color: var(--primary-color-dark);
+    --secondary-color: var(--secondary-color-dark);
+  }
+
 /* Display type: slightly tighter line-height so Gloock doesn't feel airy. */
 #hero h1 {
-    line-height: 1.1;
+    line-height: 1.5;
     margin-bottom: 1rem;
+    opacity: 1 !important;
 }
 
 #hero h2 {
     line-height: 1.25;
-    opacity: 0.75 !important;
-    
+    opacity: 1 !important;
+    color: var(--text-color) !important;
     font-size: clamp(1.5rem, 3vw, 2rem) !important;
 }
 
@@ -26,13 +37,18 @@ body:not(.dark) #hero {
     font-size: 1.1rem;
 }
 
-#hero a.btn {
-    background-color: var(--primary-color) !important;
-    color: #fff !important;
-    border-color: var(--primary-color) !important;
+#hero #hero-buttons a.btn {
     font-family: "Inter", sans-serif;
     font-weight: 500;
     letter-spacing: 0.02em;
+    color: var(--background-color) !important; 
+    background-color: var(--text-color) !important;
+    border: none;
+}
+
+#hero #hero-buttons a.btn:hover {
+    color: var(--text-color) !important;
+    background-color: var(--background-color) !important;
 }
 
 /* About section: keep it centered and narrow for readability. */

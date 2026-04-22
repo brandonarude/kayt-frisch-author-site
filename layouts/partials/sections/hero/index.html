@@ -7,15 +7,18 @@
 */}}
 {{ if .Site.Params.hero.enable | default false }}
 {{- $hero := .Site.Language.Params.hero | default .Site.Params.hero -}}
-<section id="hero" class="py-5 align-middle">
-    <div class="container px-3 px-sm-5 px-md-5 px-lg-5 pt-lg-3">
-        <div class="row align-items-center text-center text-lg-start">
-            <div class="{{ if $hero.image }}col-sm-12 col-md-12 col-lg-8{{ else }}col-12{{ end }} content {{ if .Site.Params.animate }}animate{{ end }}" id="primary-font">
+<section id="hero" class="py-5 align-middle min-vh-100 d-flex align-items-center flex hero-dark">
+    {{if $hero.backgroundImage }}
+    <img src={{ $hero.backgroundImage }} alt="Background image" class="position-absolute w-100 vh-100 opacity-1" style="top:0; left:0; object-fit: cover;">
+    {{end}}
+    <div class="container py-4 px-3 px-sm-5 px-md-5 px-lg-5 rounded z-2 position-relative">
+        <div class="row align-items-center text-center position-relative">
+            <div class="col-12 content {{ if .Site.Params.animate }}animate{{ end }}" id="primary-font">
                 {{ with $hero.intro }}<span class="subtitle">{{ . }}</span>{{ end }}
-                <h1>{{ $hero.title }}</h1>
-                {{ with $hero.subtitle }}<h2>{{ . }}</h2>{{ end }}
-                {{ with $hero.content }}<p class="hero-content">{{ . | markdownify }}</p>{{ end }}
-                <div class="row justify-content-center justify-content-lg-start">
+                <h1><span class="p-2 rounded " style="color: var(--text-color); background-color: var(--secondary-color)">{{ $hero.title }}</span></h1>
+                {{ with $hero.subtitle }}<h2><span class="opacity-1">{{ . }}</span></h2>{{ end }}
+                {{ with $hero.content }}<p class="hero-content text-center w-100">{{ . | markdownify }}</p>{{ end }}
+                <div id="hero-buttons"class="row justify-content-center">
                     <div class="col-auto h-100">
                         {{ if .Site.Params.hero.button.enable }}
                         <a href="{{ .Site.Params.hero.button.url }}" class="btn"
@@ -27,18 +30,10 @@
                     </div>
                 </div>
             </div>
-            {{ if $hero.image }}
-            <div class="col-sm-12 col-md-12 col-lg-4">
-                <div class="row justify-content-center">
-                    <div class="col-sm-12 col-md-9 pt-5 image {{ if .Site.Params.animate }}animate{{ end }} px-5 px-md-5 px-lg-0 text-center">
-                        <img src="{{ $hero.image }}"
-                            class="img-thumbnail mx-auto{{ if .Site.Params.hero.roundImage }} rounded-circle{{ end }}"
-                            alt="{{ .Site.Params.title }} profile image">
-                    </div>
-                </div>
-            </div>
-            {{ end }}
         </div>
     </div>
+    <a href="#about" class="d-none d-lg-block position-absolute bottom-0 start-50 translate-middle-x mb-4 rounded-circle container justify-content-center align-items-center" style="background-color: var(--secondary-color); height: 40px; width: 40px;">
+        <i class="fa-solid fa-angle-down fa-2xl position-absolute bottom-0 start-50 translate-middle-x" style="color: var(--text-color);"></i>
+    </a>
 </section>
 {{ end }}

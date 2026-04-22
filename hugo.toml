@@ -15,6 +15,7 @@ theme = "hugo-profile"
   favicon = "images/kayt-frisch-favicon-transparent-200x200.png"
   useBootstrapCDN = false
   animate = true
+  customCSS = ["/css/style.css"]
 
   # Navbar is hidden for now. To restore: open
   # layouts/partials/sections/header.html at the project root and uncomment
@@ -43,10 +44,10 @@ theme = "hugo-profile"
     [params.color.darkmode]
       textColor = "#e4e6eb"
       secondaryTextColor = "#b0b3b8"
-      textLinkColor = "#c89978"
+      textLinkColor = "#99C270"
       backgroundColor = "#1a1614"
       secondaryBackgroundColor = "#2a2320"
-      primaryColor = "#c89978"
+      primaryColor = "#99C270"
       secondaryColor = "#2a2320"
 
   [params.navbar]
@@ -68,14 +69,13 @@ theme = "hugo-profile"
     enable = true
     title = "Kayt Frisch, PhD"
     subtitle = "Helping families see how God's Creation tells our story."
-    image="/images/frisch-kayt.jpg"
-    roundImage = true
+    backgroundImage="/images/hero.jpg"
     # Hero image intentionally omitted. The project's hero override
     # (layouts/partials/sections/hero/index.html) skips the image column
     # when this value is empty.
     [params.hero.button]
       enable = true
-      name = "Read on Substack"
+      name = "Follow Substack"
       url = "https://godscreationtellsourstory.substack.com/"
       newPage = true
       download = false
@@ -84,6 +84,7 @@ theme = "hugo-profile"
   [params.about]
     enable = true
     title = "About"
+    image = "/images/frisch-kayt.jpg"
     content = """
 Dr. Kayt Frisch is a professor, parent, and Christ follower who helps learners of all ages understand more about the world God made. She has spent fifteen years in university classrooms, teaching physics and engineering.
 
@@ -100,7 +101,7 @@ Now as a parent she is discipling children.<!-- TODO: complete bio -->
     enable = true
     title = "Endorsements"
     [[params.endorsements.items]]
-      quote = "God's Creation Tells Our Story is the book series I wish I'd had when I was homeschooling my daughters."
+      quote = "**God's Creation Tells Our Story** is the book series I wish I'd had when I was homeschooling my daughters."
       attribution = "Tamara W."
 
   [params.experience]
