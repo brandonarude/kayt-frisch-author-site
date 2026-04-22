@@ -17,7 +17,8 @@ body:not(.dark) #hero {
 
 #hero h2 {
     line-height: 1.25;
-    opacity: 0.75;
+    opacity: 0.75 !important;
+    
     font-size: clamp(1.5rem, 3vw, 2rem) !important;
 }
 
@@ -32,12 +33,6 @@ body:not(.dark) #hero {
     font-family: "Inter", sans-serif;
     font-weight: 500;
     letter-spacing: 0.02em;
-}
-
-#hero a.btn:hover {
-    background-color: var(--primary-color) !important;
-    color: #fff !important;
-    opacity: 0.88;
 }
 
 /* About section: keep it centered and narrow for readability. */

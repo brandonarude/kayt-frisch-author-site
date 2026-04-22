@@ -33,13 +33,13 @@ theme = "hugo-profile"
 
   # Minimal palette — one primary accent drives links, buttons, and hero h1.
   [params.color]
-    textColor = "#2a2a2a"
-    secondaryTextColor = "#6b6b6b"
-    textLinkColor = "#8a5a3b"
-    backgroundColor = "#faf7f2"
-    secondaryBackgroundColor = "#f1ece2"
-    primaryColor = "#8a5a3b"
-    secondaryColor = "#f1ece2"
+    textColor = "#2A2A2A"
+    secondaryTextColor = "#595959"
+    textLinkColor = "#99C270"
+    backgroundColor = "#F2F7ED"
+    secondaryBackgroundColor = "#E6EFDC"
+    primaryColor = "#99C270"
+    secondaryColor = "#E6EFDC"
     [params.color.darkmode]
       textColor = "#e4e6eb"
       secondaryTextColor = "#b0b3b8"
@@ -68,6 +68,8 @@ theme = "hugo-profile"
     enable = true
     title = "Kayt Frisch, PhD"
     subtitle = "Helping families see how God's Creation tells our story."
+    image="/images/frisch-kayt.jpg"
+    roundImage = true
     # Hero image intentionally omitted. The project's hero override
     # (layouts/partials/sections/hero/index.html) skips the image column
     # when this value is empty.

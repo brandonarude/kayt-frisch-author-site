@@ -9,13 +9,13 @@
 {{- $hero := .Site.Language.Params.hero | default .Site.Params.hero -}}
 <section id="hero" class="py-5 align-middle">
     <div class="container px-3 px-sm-5 px-md-5 px-lg-5 pt-lg-3">
-        <div class="row">
+        <div class="row align-items-center text-center text-lg-start">
             <div class="{{ if $hero.image }}col-sm-12 col-md-12 col-lg-8{{ else }}col-12{{ end }} content {{ if .Site.Params.animate }}animate{{ end }}" id="primary-font">
                 {{ with $hero.intro }}<span class="subtitle">{{ . }}</span>{{ end }}
                 <h1>{{ $hero.title }}</h1>
                 {{ with $hero.subtitle }}<h2>{{ . }}</h2>{{ end }}
                 {{ with $hero.content }}<p class="hero-content">{{ . | markdownify }}</p>{{ end }}
-                <div class="row">
+                <div class="row justify-content-center justify-content-lg-start">
                     <div class="col-auto h-100">
                         {{ if .Site.Params.hero.button.enable }}
                         <a href="{{ .Site.Params.hero.button.url }}" class="btn"
