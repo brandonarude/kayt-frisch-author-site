@@ -1,0 +1,317 @@
+media:
+  input: static/images
+  output: /images
+  categories: [image]
+
+content:
+  - name: site
+    label: Site
+    type: file
+    path: hugo.toml
+    format: toml
+    fields:
+      - name: baseURL
+        label: Base URL
+        type: string
+      - name: title
+        label: Site title
+        type: string
+      - name: languageCode
+        label: Language code
+        type: string
+        default: en-us
+      - name: theme
+        label: Theme
+        type: string
+        default: hugo-profile
+        options:
+          hidden: true
+      - name: markup
+        label: Markup
+        type: object
+        options:
+          hidden: true
+        fields:
+          - name: goldmark
+            type: object
+            fields:
+              - name: renderer
+                type: object
+                fields:
+                  - name: unsafe
+                    type: boolean
+      - name: outputs
+        label: Outputs
+        type: object
+        options:
+          hidden: true
+        fields:
+          - name: home
+            type: string
+            list: true
+          - name: page
+            type: string
+            list: true
+      - name: params
+        label: Page content
+        type: object
+        fields:
+          - name: description
+            label: Meta description
+            type: text
+          - name: favicon
+            label: Favicon
+            type: image
+          - name: useBootstrapCDN
+            label: Use Bootstrap CDN
+            type: boolean
+          - name: animate
+            label: Enable animations
+            type: boolean
+          - name: customCSS
+            label: Custom CSS files
+            type: string
+            list: true
+
+          - name: hero
+            label: Hero section
+            type: object
+            fields:
+              - name: enable
+                label: Enable
+                type: boolean
+              - name: title
+                label: Title
+                type: string
+              - name: subtitle
+                label: Subtitle
+                type: text
+              - name: backgroundImage
+                label: Background image
+                type: image
+              - name: button
+                label: Button
+                type: object
+                fields:
+                  - name: enable
+                    label: Enable
+                    type: boolean
+                  - name: name
+                    label: Label
+                    type: string
+                  - name: url
+                    label: URL
+                    type: string
+                  - name: newPage
+                    label: Open in new tab
+                    type: boolean
+                  - name: download
+                    label: Download link
+                    type: boolean
+
+          - name: about
+            label: About section
+            type: object
+            fields:
+              - name: enable
+                label: Enable
+                type: boolean
+              - name: title
+                label: Heading
+                type: string
+              - name: image
+                label: Portrait
+                type: image
+              - name: content
+                label: Bio
+                type: text
+              - name: skills
+                label: Skills
+                type: object
+                options:
+                  hidden: true
+                fields:
+                  - name: enable
+                    type: boolean
+
+          - name: endorsements
+            label: Endorsements
+            type: object
+            fields:
+              - name: enable
+                label: Enable section
+                type: boolean
+              - name: title
+                label: Heading
+                type: string
+              - name: items
+                label: Quotes
+                type: object
+                list: true
+                fields:
+                  - name: quote
+                    label: Quote (markdown ok)
+                    type: text
+                  - name: attribution
+                    label: Attribution
+                    type: string
+
+          - name: theme
+            label: Theme options
+            type: object
+            options:
+              hidden: true
+            fields:
+              - name: disableThemeToggle
+                type: boolean
+              - name: defaultTheme
+                type: string
+
+          - name: font
+            label: Font
+            type: object
+            options:
+              hidden: true
+            fields:
+              - name: fontSize
+                type: string
+              - name: fontWeight
+                type: number
+              - name: lineHeight
+                type: number
+              - name: textAlign
+                type: string
+
+          - name: color
+            label: Colors
+            type: object
+            options:
+              hidden: true
+            fields:
+              - name: textColor
+                type: string
+              - name: secondaryTextColor
+                type: string
+              - name: textLinkColor
+                type: string
+              - name: backgroundColor
+                type: string
+              - name: secondaryBackgroundColor
+                type: string
+              - name: primaryColor
+                type: string
+              - name: secondaryColor
+                type: string
+              - name: darkmode
+                type: object
+                fields:
+                  - name: textColor
+                    type: string
+                  - name: secondaryTextColor
+                    type: string
+                  - name: textLinkColor
+                    type: string
+                  - name: backgroundColor
+                    type: string
+                  - name: secondaryBackgroundColor
+                    type: string
+                  - name: primaryColor
+                    type: string
+                  - name: secondaryColor
+                    type: string
+
+          - name: navbar
+            label: Navbar
+            type: object
+            options:
+              hidden: true
+            fields:
+              - name: align
+                type: string
+              - name: brandName
+                type: string
+              - name: disableSearch
+                type: boolean
+              - name: stickyNavBar
+                type: object
+                fields:
+                  - name: enable
+                    type: boolean
+                  - name: showOnScrollUp
+                    type: boolean
+              - name: menus
+                type: object
+                fields:
+                  - name: disableAbout
+                    type: boolean
+                  - name: disableExperience
+                    type: boolean
+                  - name: disableEducation
+                    type: boolean
+                  - name: disableProjects
+                    type: boolean
+                  - name: disableAchievements
+                    type: boolean
+                  - name: disableContact
+                    type: boolean
+
+          - name: experience
+            type: object
+            options:
+              hidden: true
+            fields:
+              - name: enable
+                type: boolean
+          - name: education
+            type: object
+            options:
+              hidden: true
+            fields:
+              - name: enable
+                type: boolean
+          - name: projects
+            type: object
+            options:
+              hidden: true
+            fields:
+              - name: enable
+                type: boolean
+          - name: achievements
+            type: object
+            options:
+              hidden: true
+            fields:
+              - name: enable
+                type: boolean
+          - name: contact
+            type: object
+            options:
+              hidden: true
+            fields:
+              - name: enable
+                type: boolean
+
+          - name: footer
+            label: Footer
+            type: object
+            options:
+              hidden: true
+            fields:
+              - name: recentPosts
+                type: object
+                fields:
+                  - name: enable
+                    type: boolean
+              - name: socialNetworks
+                type: object
+                fields:
+                  - name: github
+                    type: string
+                  - name: linkedin
+                    type: string
+                  - name: twitter
+                    type: string
+                  - name: instagram
+                    type: string
+                  - name: facebook
+                    type: string
